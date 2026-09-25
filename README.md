@@ -84,9 +84,6 @@ the same IP address in a short window, it combines them into one higher-severity
 (rule 60204, level 10, "Multiple Windows Logon Failures"). Wazuh also tags that alert with the
 MITRE ATT&CK technique it matches, **T1110 (Brute Force)**.
 
-That's the main thing I learned a SIEM does for you: it takes a pile of small events and turns them
-into one alert that's actually worth looking at.
-
 ![Wazuh overview](screenshots/04-wazuh-dashboard-overview.png)
 
 ### 4. Investigating it
@@ -96,8 +93,7 @@ I opened the alert and filtered on the attacker's IP to confirm where the attack
 data.win.eventdata.ipAddress:192.168.56.103
 ```
 
-That returned all the failed logins tied to the Kali VM. Being able to go from an alert to the
-source IP is a big part of what a SOC analyst does day to day.
+That returned all the failed logins tied to the Kali VM. 
 
 ![Wazuh attacker IP](screenshots/06-wazuh-attacker-ip.png)
 
@@ -139,7 +135,6 @@ Takeaway: give the Wazuh VM plenty of RAM and, if you can, put it on an SSD.
 ## If I Kept Building On This
 - A slower, more patient attacker (a few guesses per hour) would stay under the brute-force
   threshold and might not trigger the level-10 alert. Catching that would need a different rule.
-  (I think it's worth being honest about what the lab does *not* catch.)
 - Add File Integrity Monitoring to detect changed files.
 - Add Sysmon on Windows for more detailed logs.
 - Set up email/Slack alerts and automatic blocking of an attacker's IP.
