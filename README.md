@@ -1,10 +1,10 @@
 # Wazuh SIEM Home Lab — Detecting a Brute-Force Attack
 
-A home lab I built to get hands-on practice with SOC (Security Operations Center) basics. I set up
+A home lab I built to get hands-on practice with SOC basics. I set up
 three virtual machines, ran a password-guessing attack from a Kali VM against a Windows machine, and
-used **Wazuh** (a free, open-source SIEM) to detect and investigate it.
+used Wazuh to detect and investigate it.
 
-I'm new to cybersecurity, and I built this to learn how security monitoring actually works instead
+I built this to learn how security monitoring actually works instead
 of just reading about it.
 
 **Tools used:** VirtualBox, Ubuntu Server, Windows 10, Kali Linux, Wazuh 4.14, NetExec, MITRE ATT&CK
